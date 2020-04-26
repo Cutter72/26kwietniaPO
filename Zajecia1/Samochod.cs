@@ -81,6 +81,16 @@ namespace Zajecia1
             return spalanie * cenaPaliwa;
         }
 
+        public void WypiszInfo() {
+            Console.WriteLine($"Marka: {this.marka}");
+            Console.WriteLine($"Model: {this.model}");
+            Console.WriteLine($"Ilość drzwi: {this.iloscDrzwi}");
+            Console.WriteLine($"Pojemnosc silnika: {this.pojemnoscSilnika}");
+            Console.WriteLine($"Średnie spalanie: {this.srednieSpalanie}");
+        }
 
+        public static void WypiszIloscSamochodow() {
+            Console.WriteLine($"Utworzono już {iloscSamochodow} samochodów.");
+        }
     }
 }
