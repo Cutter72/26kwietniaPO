@@ -62,6 +62,9 @@ namespace Zajecia1
             os1.DodajSamochod(sam2.NumerRejestracyjny);
             os1.DodajSamochod(sam2.NumerRejestracyjny);
             os1.WypiszInfo();
+            os1.UsunSamochod(sam1.NumerRejestracyjny);
+            os1.UsunSamochod(sam1.NumerRejestracyjny);
+            os1.WypiszInfo();
             Console.ReadKey(); 
             #endregion
 

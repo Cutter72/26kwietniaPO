@@ -55,15 +55,11 @@ namespace Zajecia1
         {
             for (int i = 0; i < this.numeryPojazdow.Length; i++)
             {
-                if (this.numeryPojazdow[i].Equals(numerRejestracyjny))
+                if (this.numeryPojazdow[i] != null && this.numeryPojazdow[i].Equals(numerRejestracyjny))
                 {
                     this.numeryPojazdow[i] = null;
                     this.iloscSamochodow--;
                     return;
-                }
-                else
-                {
-                    Console.WriteLine("Nie ma takiego pojazdu pojazdu!");
                 }
             }
         }
