@@ -12,6 +12,8 @@ namespace Zajecia1
         private Samochod[] samochody;
 
         private string adres;
+        private int pojemnosc;
+        private int liczbaSamochodow = 0;
 
 
         public string Adres
@@ -20,7 +22,6 @@ namespace Zajecia1
             set { adres = value; }
         }
 
-        private int pojemnosc;
 
         public int Pojemnosc
         {
@@ -30,7 +31,6 @@ namespace Zajecia1
             }
         }
 
-        private int liczbaSamochodow = 0;
 
         public Garaz()
         {

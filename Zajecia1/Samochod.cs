@@ -8,7 +8,14 @@ namespace Zajecia1
 {
     class Samochod
     {
+        private static int liczbaSamochodow = 0;
+
         private string marka;
+        private string model;
+        private int iloscDrzwi;
+        private int pojemnoscSilnika;
+        private double srednieSpalanie;
+        private string numerRejestracyjny;
 
         public string Marka
         {
@@ -16,7 +23,6 @@ namespace Zajecia1
             set { marka = value; }
         }
 
-        private string model;
 
         public string Model
         {
@@ -24,7 +30,6 @@ namespace Zajecia1
             set { model = value; }
         }
 
-        private int iloscDrzwi;
 
         public int IloscDrzwi
         {
@@ -32,7 +37,6 @@ namespace Zajecia1
             set { iloscDrzwi = value; }
         }
 
-        private int pojemnoscSilnika;
 
         public int PojemnoscSilnika
         {
@@ -40,7 +44,6 @@ namespace Zajecia1
             set { pojemnoscSilnika = value; }
         }
 
-        private double srednieSpalanie;
 
         public double SrednieSpalanie
         {
@@ -48,7 +51,7 @@ namespace Zajecia1
             set { srednieSpalanie = value; }
         }
 
-        private static int iloscSamochodow = 0;
+        public string NumerRejestracyjny { get => numerRejestracyjny; set => numerRejestracyjny = value; }
 
         public Samochod() {
             this.model = "nieznany";
@@ -56,19 +59,21 @@ namespace Zajecia1
             this.iloscDrzwi = 0;
             this.pojemnoscSilnika = 0;
             this.srednieSpalanie = 0.0;
+            this.numerRejestracyjny = "nieznany";
 
-            iloscSamochodow++;
+            liczbaSamochodow++;
         }
 
-        public Samochod(string marka_, string model_, int iloscDrzwi_, int pojemnoscSilnika_, double srednieSpalanie_)
+        public Samochod(string marka_, string model_, int iloscDrzwi_, int pojemnoscSilnika_, double srednieSpalanie_, string numerRejestracyjny)
         {
             this.marka = marka_;
             this.model = model_;
             this.iloscDrzwi = iloscDrzwi_;
             this.pojemnoscSilnika = pojemnoscSilnika_;
             this.srednieSpalanie = srednieSpalanie_;
+            this.NumerRejestracyjny = numerRejestracyjny;
 
-            iloscSamochodow++;
+            liczbaSamochodow++;
         }
 
         private double ObliczSpalanie(double dlugoscTrasy) {
@@ -90,7 +95,7 @@ namespace Zajecia1
         }
 
         public static void WypiszIloscSamochodow() {
-            Console.WriteLine($"Utworzono już {iloscSamochodow} samochodów.");
+            Console.WriteLine($"Utworzono już {liczbaSamochodow} samochodów.");
         }
     }
 }
