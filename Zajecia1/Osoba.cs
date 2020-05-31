@@ -34,6 +34,13 @@ namespace Zajecia1
 
         public void DodajSamochod(string numerRejestracyjny)
         {
+            foreach (string nr in this.numeryPojazdow)
+            {
+                if (nr != null && nr.Equals(numerRejestracyjny))
+                {
+                    return;
+                }
+            }
             for (int i = 0 ; i < this.numeryPojazdow.Length; i++)
             {
                 if (this.numeryPojazdow[i] == null)
@@ -41,10 +48,6 @@ namespace Zajecia1
                     this.numeryPojazdow[i] = numerRejestracyjny;
                     this.iloscSamochodow++;
                     return;
-                }
-                else
-                {
-                    Console.WriteLine("Nie można dodać więcej pojazdów!");
                 }
             }
         }
@@ -66,7 +69,7 @@ namespace Zajecia1
         }
         public void WypiszInfo()
         {
-            Console.WriteLine($"Imie: {this.imie}");
+            Console.WriteLine($"\nImie: {this.imie}");
             Console.WriteLine($"Nazwisko: {this.nazwisko}");
             Console.WriteLine($"Adres zamieszkania: {this.adresZamieszkania}");
             Console.WriteLine($"Posiada {this.iloscSamochodow} samochód/samochodów");
